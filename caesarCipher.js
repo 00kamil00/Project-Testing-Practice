@@ -4,10 +4,19 @@ function caesarCipher(string, key) {
   'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ]
 
+
     let finalResult = ''
     let splittedString = string.split('')
 
+
     splittedString.forEach((item) => {
+        let isUpperCase = false
+
+        if (item == item.toUpperCase()) {
+            isUpperCase = true
+            item = item.toLowerCase()
+        }
+
         let indexOfItem = alphabet.indexOf(item)
         let newIndex = indexOfItem + key
 
@@ -16,6 +25,9 @@ function caesarCipher(string, key) {
         }
 
         let result = alphabet[newIndex]
+        if (isUpperCase) {
+            result = result.toUpperCase()
+        }
         finalResult += result
     })
 
