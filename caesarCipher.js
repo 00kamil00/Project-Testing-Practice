@@ -17,6 +17,11 @@ function caesarCipher(string, key) {
             item = item.toLowerCase()
         }
 
+        if (!alphabet.includes(item)) {
+            finalResult += item
+            return
+        }
+
         let indexOfItem = alphabet.indexOf(item)
         let newIndex = indexOfItem + key
 

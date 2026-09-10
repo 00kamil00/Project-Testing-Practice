@@ -13,3 +13,7 @@ test('shifts again from z to a etc.', () => {
 test('preserves lettercase', () => {
     expect(caesarCipher('HeLLo', 3)).toBe('KhOOr')
 })
+
+test('does not pay attention to punctuation', () => {
+    expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!')
+})
